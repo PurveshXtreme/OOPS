@@ -84,13 +84,9 @@ Some widely used languages that follow OOP principles are:
 ### Classes, Objects, and Memory
 
 ### 7. What is a Class?
-A **class** is the fundamental building block of Object-Oriented Programming.  
-It is a **user-defined data type** that encapsulates:
-- **Data members** (variables, attributes, properties)  
-- **Member functions** (methods, behaviors, operations)  
-
-A class serves as a **blueprint or template** from which multiple objects can be created.  
-Objects created from the same class share a similar structure but may hold **different values** for their attributes.
+- A class is a building block of Object-Oriented Programs.
+- It is a user-defined data type that contains the data members and member functions that operate on the data members.
+- It is like a blueprint or template of objects having common properties and methods.
 
 ✅ Example in C++:
 ```cpp
