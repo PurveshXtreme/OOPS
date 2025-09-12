@@ -184,6 +184,96 @@ public:
 ---
 ---
 
+### Core OOPs Principles (4 Pillars)
+
+### 10. What is Encapsulation?
+![Encapsulation](https://media.geeksforgeeks.org/wp-content/uploads/20230119164955/encapsulation.png)
+
+Encapsulation is the process of **binding data and methods that operate on that data into a single unit**.  
+It ensures that sensitive data is hidden from external users and can only be accessed through controlled interfaces.  
+
+#### Key Implementations:
+- **Data Hiding**: Restricting access to members of an object using access specifiers like `private` and `protected` in C++.  
+- **Bundling Data & Methods Together**: Data members and the functions operating on them are wrapped into a single unit called a **class**.  
+
+---
+
+### 11. What is Abstraction?
+![Abstraction](https://media.geeksforgeeks.org/wp-content/uploads/20230125135240/abstraction.png)
+
+Abstraction is the concept of **showing only the necessary information** while hiding the implementation details.  
+It focuses on **what a system does** rather than **how it does it**.  
+
+#### Implementation in OOP:
+- **Classes**: Hide the implementation details and provide a clean interface.  
+- **Interfaces & Abstract Classes**: Define contracts without exposing internal logic.  
+
+---
+
+### 12. What is Inheritance? What is its purpose?
+Inheritance is the process where a class (**child/derived class**) acquires properties and behaviors (data & methods) from another class (**parent/base class**).  
+
+- The derived class can reuse and extend the functionality of the base class.  
+- The **main purpose of inheritance** is:
+  - **Code reusability**  
+  - Achieving **runtime polymorphism**  
+
+---
+
+### 13. What is Polymorphism? What are its types?
+![Polymorphism](https://media.geeksforgeeks.org/wp-content/uploads/20250425165615062960/polymorphism.png)
+
+The term **Polymorphism** means *"many forms"*.  
+It allows the same function, operator, or method to behave differently depending on the context.  
+
+#### Types of Polymorphism:
+1. **Compile-Time Polymorphism (Static/Early Binding)**  
+   - Binding of function call is resolved at compile time.  
+   - Examples:  
+     - **Function Overloading**  
+     - **Operator Overloading**  
+
+2. **Runtime Polymorphism (Dynamic/Late Binding)**  
+   - Actual implementation is determined at runtime.  
+   - Example:  
+     - **Function Overriding** using virtual functions in C++.  
+
+---
+
+### 16. Are there any limitations of Inheritance?
+Although inheritance is powerful, it comes with drawbacks:  
+- **Slower Execution**: Since it may involve multiple classes, execution time can increase.  
+- **Tight Coupling**: Child and parent classes are closely linked; changes in the base class may affect derived classes.  
+- **Complex Implementation**: Misuse of inheritance can lead to unexpected errors or incorrect outputs.  
+
+---
+
+### 17. What are the different types of Inheritance?
+![Types of Inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20240730171935/Types-of-inheritance.webp)
+
+Inheritance can be classified into **five types**:
+
+1. **Single Inheritance**  
+   - A child class derives directly from one base class.  
+
+2. **Multiple Inheritance**  
+   - A child class derives from more than one base class.  
+
+3. **Multilevel Inheritance**  
+   - A child class derives from a class which itself is derived from another base class.  
+
+4. **Hierarchical Inheritance**  
+   - Multiple child classes derive from a single base class.  
+
+5. **Hybrid Inheritance**  
+   - A combination of two or more types of inheritance.  
+
+> ⚠️ Note: Support for inheritance types depends on the programming language.  
+> Example: **Java does not support multiple inheritance** directly, but allows it through interfaces.
+
+
+---
+---
 
 
 
