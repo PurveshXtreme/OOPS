@@ -275,5 +275,214 @@ Inheritance can be classified into **five types**:
 ---
 ---
 
+### Special Classes and Interfaces
 
+### 18. What is an Interface?
+- An **interface** is a unique class type that contains **method declarations but not their definitions**.  
+- Inside an interface, only method declarations are permitted.  
+- You cannot create objects of an interface. Instead, the interface must be **implemented by a class**, which provides the method definitions.  
+
+---
+
+### 19. How is an Abstract Class different from an Interface?
+
+Both **abstract classes** and **interfaces** are special types of classes that include **method declarations without implementations**. However, they differ in important ways:
+
+| **Abstract Class** | **Interface** |
+|---------------------|---------------|
+| Can have **both abstract and non-abstract methods** | Can have **only abstract methods** |
+| Can contain **final, non-final, static, and non-static variables** | Can only contain **static and final variables** |
+| Does **not support multiple inheritance** | **Supports multiple inheritance** |
+
+---
+
+### 30. What is an Abstract Class?
+- An **abstract class** is a class that is designed to be used for **inheritance** and **cannot be instantiated** directly.  
+- It can contain **both abstract and non-abstract methods**.  
+- Purpose: To provide a **base class** with common functionality that other classes can inherit and extend.  
+
+#### Language-Specific Notes:
+- **C++:** An abstract class is a class that contains **at least one pure virtual function**.  
+- **Java & C#:** Declared using the `abstract` keyword.  
+- **Python:** Uses the **ABC (Abstract Base Class)** module to create an abstract class.  
+
+#### Example in C++:
+```cpp
+class absClass {
+public:
+    virtual void pvFunc() = 0; // Pure virtual function
+};
+```
+
+---
+---
+
+### Constructors and Destructors
+
+### 23. What is a Constructor?
+- A **constructor** is a block of code that initializes a newly created object.  
+- It looks like an instance method but **is not a method**, since it has **no return type**.  
+- Usually, it has the same name as the class.  
+#### Language Specifics:
+- **Python:** Constructor is named `__init__`.  
+- **C++ & Java:** Constructor has the same name as the class.  
+#### Example in C++:
+```cpp
+class base {
+public:
+    base() { cout << "This is a constructor"; }
+};
+```
+
+### 24. What are the Various Types of Constructors in C++?
+Constructors in C++ are commonly classified into:
+- Default Constructor
+- Non-Parameterized Constructor
+- Parameterized Constructor
+- Copy Constructor
+
+#### 1. Default Constructor
+- A constructor that doesn't take any arguments.
+- Automatically created by the compiler if no constructor is defined.
+- Initializes members to default values.
+
+#### 2. Non-Parameterized Constructor
+- A user-defined constructor with no arguments.
+- Example:
+```cpp
+class base {
+public:
+    base() {
+        cout << "This is a non-parameterized constructor";
+    }
+};
+```
+
+#### 3. Parameterized Constructor
+- A constructor that accepts arguments to initialize members.
+- Example:
+```cpp
+class base {
+public:
+    int data;
+    base(int var) {
+        cout << "Constructor with argument: " << var;
+    }
+};
+```
+
+#### 4. Copy Constructor
+- Initializes an object using another object of the same class.
+- Example:
+```cpp
+class base {
+    int a, b;
+public:
+    // copy constructor
+    base(base& obj) {
+        a = obj.a;
+        b = obj.b;
+    }
+};
+```
+- **Python:** No built-in copy constructor, but it can be mimicked using methods like `copy.copy()` or custom implementation.
+
+### 25. What is a Destructor?
+- A **destructor** is a special method called automatically when an object goes out of scope or is destroyed.
+#### Language Specifics:
+- **C++:** Destructor name = class name prefixed with `~`.
+- **Python:** Destructor is defined using `__del__`.
+- **Java:** No destructor (garbage collector handles cleanup).
+  - `finalize()` was used earlier but is deprecated since Java 9.
+#### Example in C++:
+```cpp
+class base {
+public:
+    ~base() { cout << "This is a destructor"; }
+};
+```
+
+### 26. Can we Overload the Constructor in a Class?
+✅ **Yes**, constructors can be overloaded in a class.
+- This is called **Constructor Overloading**.
+- Multiple constructors with different parameters (number or type).
+
+### 27. Can we Overload the Destructor in a Class?
+❌ **No**, a destructor cannot be overloaded in a class.
+- A class can have only one destructor.
+
+---
+---
+
+### Functions and Polymorphism
+
+### 15. Difference Between Overloading and Overriding
+- **Overloading**  
+  - A **compile-time polymorphism** feature.  
+  - Allows multiple methods or operators with the same name but **different parameter lists** (number or type of parameters).  
+  - Example: Method Overloading, Operator Overloading.  
+- **Overriding**  
+  - A **runtime polymorphism** feature.  
+  - Allows a derived class to provide a **different implementation** of a method that already exists in the base class.  
+  - Implemented using **virtual functions** (in C++).  
+
+---
+
+### 28. Friend Functions and Friend Classes
+- **Friend Function**  
+  - A special function that is **not a member** of a class but has access to the class's **private** and **protected** members.  
+  - Declared by using the `friend` keyword inside the class.  
+  **Example:**
+  ```cpp
+  class Base {
+      int data;
+      friend void showData(Base& obj);  // Friend function
+  };
+  ```
+
+#### Friend Class
+- A class declared as a friend inside another class.
+- The friend class has access to the private and protected members of the class in which it is declared.
+- Example:
+```cpp
+class A {
+    friend class B;  // B can access private members of A
+};
+```
+
+### 29. Virtual and Pure Virtual Functions
+#### Virtual Function
+- A function in a base class that can be overridden in a derived class.
+- Enables runtime polymorphism.
+- Declared using the `virtual` keyword in C++.
+#### Language Specifics:
+- **C++/C#:** Use `virtual` keyword.
+- **Java:** All non-static, non-final public methods are virtual by default.
+- **Python:** All methods are virtual by default.
+#### Example:
+```cpp
+class Base {
+public:
+    virtual void print() {
+        cout << "This is a virtual function";
+    }
+};
+```
+
+#### Pure Virtual Function
+- A virtual function that has no implementation in the base class.
+- Declared by assigning `= 0` in C++.
+- Makes the class abstract (cannot be instantiated).
+#### Example:
+```cpp
+class Base {
+public:
+    virtual void pureVirFunc() = 0;  // Pure Virtual Function
+};
+```
+#### In Python:
+- Achieved using `@abstractmethod` from the ABC (Abstract Base Class) module.
+
+---
+---
 
